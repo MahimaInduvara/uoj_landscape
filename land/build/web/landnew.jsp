@@ -1,43 +1,35 @@
-<%-- 
-    Document   : landS
-    Created on : Jul 20, 2024, 8:58:38 PM
-    Author     : DELL
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Landscape - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .flex-container {
-            display: flex;
-            align-items: center;
-            
+            margin: 0;
+            padding: 0;
+            background-image: url('image/pura.jpg');
+            background-size: cover; 
+            background-attachment: fixed; 
+            background-position: center; 
         }
 
         .menu {
             display: flex;
-            flex-grow: 1;
             justify-content: center;
+            align-items: center;
             background-color: #FF0000;
+            position: fixed;
             width: 100%;
-            padding-left: 350px;
-            padding-top: 100px;
-              position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 20px 0;
         }
 
         .menu ul {
@@ -59,16 +51,29 @@
         }
 
         .menu ul li a:hover {
-            background-color: #555;
+            background-color: yellow;
+            color: red;
         }
 
-        .image-container {
-            margin-right: 20px;
+        .logo img {
+            height: 70px;
+            width: auto;
         }
 
-        .image-container img {
-            height: 108px;
-            width: 250px;
+        .bimage {
+            height: 400px; 
+            background-color: rgba(255, 255, 255, 0.5); 
+            margin-top: 80px; 
+        }
+
+        .bimage img {
+            width: 100%;
+            height: auto;
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 800px; 
         }
 
         .content {
@@ -126,59 +131,51 @@
         .card-button:hover {
             background-color: #555;
         }
-        .logo{
-            padding-left: 200px;
-            
-        }
-        .bimage{
-            padding-top: 60px;
-             position: fixed;
-        }
-        .all{
-            padding-top: 700px;
-        }
-        .ptag{
-             
-            justify-content: space-around;
-            flex-wrap: wrap-reverse;
+
+        .ptag {
             background-color: yellow;
-            
-            
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
-  
-        <div class="flex-container">
-            
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contactUs.html">Contact Us</a></li>
-                </ul>
-                <div class="logo">
-                <img src="image/uj.PNG" alt="University Image" width="130px" height="70px" style=" padding-right: 0px; padding-left: 10px;">
-           </div>
-            </nav>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+        <div class="logo">
+            <img src="image/uoj.jpg" alt="University Image">
         </div>
-    <div class="bimage">
-    <br><img src="image/uj.PNG" width="100%" height="100%"></div>
+    </nav>
     
     <main>
-        <div class="all">
-            <div class="ptag">
         <div class="content">
-            <h1> Welcome to Our University</h1>
-                <p>This is the home page content.</p>
+            <h1>Welcome to Our University</h1>
+            <p>This is the home page content.</p>
+        </div>
+        <div class="ptag">
+            <div class="content">
+                <h1><b>Uoj News</b></h1>
+                <p>What's Happening at Our University</p>
             </div>
-        <div class="content">
-            <h1><b>Uoj News</b></h1>
-            <p>What's Happening at Our University</p>
-        </div></div>
+        </div>
         <div class="card-container">
             <div class="card">
                 <img src="image/uj.PNG" alt="Card Image 1">
@@ -204,11 +201,10 @@
                     <a href="#" class="card-button">Read More</a>
                 </div>
             </div>
-            
-        </div></div>
+        </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
