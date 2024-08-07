@@ -87,7 +87,7 @@ public class adminlog1 extends HttpServlet {
        Statement st=(Statement) con.createStatement();
        
        String q="INSERT INTO adminlog (username, password) VALUES('"+user+"','"+pass+"')";
-       st.executeQuery(q);
+       st.executeUpdate(q);
        response.sendRedirect("adminPanel.html");
       }
       catch(ClassNotFoundException | SQLException ex)
