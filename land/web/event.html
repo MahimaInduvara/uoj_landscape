@@ -83,14 +83,16 @@ and open the template in the editor.
         </form>
         <center> 
             
-            <form action="updatevent" method="post" style="  width: 400px; background-color: white;"><hr style=" width: 400px; height: 5px; background-color: black; "><h1 style="text-align: center; color: red;">Update Form</h1>
+            <form action="updatevent" method="post" enctype="multipart/form-data" style="  width: 400px; background-color: white;"><hr style=" width: 400px; height: 5px; background-color: black; "><h1 style="text-align: center; color: red;">Update Form</h1>
             <table>
                 
                 
               
-                
-                <tr><td><label>What do you want to do</label></td><td><select name="update"><option value="update">Update</option>
-                                                                                        <option value="delete">Delete</option>
+                <tr><td><label>ID</label></td><td><input type="text" name="eeid"></td></tr>
+                <tr><td><label>What do you want to do</label></td><td><select name="update">
+                             <option value="">Select</option>
+                            <option value="update">Update</option>
+                             <option value="delete">Delete</option>
                         </select></td></tr>
                 
             </table>
@@ -98,7 +100,7 @@ and open the template in the editor.
                     <h4 style=" padding-left: 40px;">If you want to update data please fill all this form</h4>
                     
                     <table>
-                        <tr><td><label>ID</label></td><td><input type="text" name="eeid"></td></tr>
+                        
                         <tr><td><label>Name</label></td><td><input type="text" name="eename"></td></tr>
                         <tr><td><label>Description</label></td><td><textarea name="eedis" style=" width: 170px;; height: 50px;"></textarea></td></tr>
                                         <tr><td><label>Date</label></td><td><input type="date" name="edate"></td></tr>

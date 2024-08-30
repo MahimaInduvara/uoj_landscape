@@ -146,20 +146,20 @@
             
             <nav class="menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="landnew.jsp">Home</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="resources.html">Resources</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery.jsp">Gallery</a></li>
                     <li><a href="contactUs.html">Contact Us</a></li>
                 </ul>
                 <div class="logo">
-                <img src="image/uj.PNG" alt="University Image" width="130px" height="70px" style=" padding-right: 0px; padding-left: 10px;">
+                <img src="image/uoj.jpg" alt="University Image" width="130px" height="70px" style=" padding-right: 0px; padding-left: 10px;">
            </div>
             </nav>
         </div>
     <div class="bimage">
-    <br><img src="image/uj.PNG" width="100%" height="100%"></div>
+    <br><img src="image/" width="100%" height="100%"></div>
     
  
         <div class="all">
@@ -199,9 +199,9 @@
             <div class="card-body"><form action="landnew.jsp" method="post">
                 <h3><%=rs.getString("ename") %></h3>
                 <p class="card-text"><%=rs.getString("description")%></p>
-                <h4>Rs:<%=rs.getString("eid") %></h4>
+                <h4><%=rs.getString("eid") %></h4>
                  <br>
-                 <center><button style=" border-radius: 4px; width: 100px; background-color: #cccccc; font-weight: bold; border: 0; " type="submit" onmousemove="this.style.backgroundColor = '#2a38ec'; this.style.color='white';" onmouseout="this.style.backgroundColor = '#cccccc'; this.style.color='black';">Add to Cart</button></form></center></center> 
+                 </form>
                 </form></div>
             </div>
         </div>
@@ -225,11 +225,12 @@
                  %>
                  <img src="data:image/png;base64,<%= base64 %>"  width="255" height="230" />
             <div class="card-body"><form action="landnew.jsp" method="post">
+                    <h4><%=rs.getString("eid") %></h4><input type="hidden" name="eid" value="<%=rs.getString("eid") %>">
                 <h3><%=rs.getString("ename") %></h3><input type="hidden" name="name" value="<%=rs.getString("ename") %>">
                 <p class="card-text"><%=rs.getString("description")%></p><input type="hidden" name="des" value="<%=rs.getString("description") %>">
-                <h4><%=rs.getString("eid") %></h4><input type="hidden" name="price" value="<%=rs.getString("eid") %>">
+                
                  <br>
-                 <center><button style=" border-radius: 4px; width: 100px; background-color: #cccccc; font-weight: bold; border: 0; " type="submit" onmousemove="this.style.backgroundColor = '#2a38ec'; this.style.color='white';" onmouseout="this.style.backgroundColor = '#cccccc'; this.style.color='black';">view more</button></form></center></center> 
+                 </form>
                 </form>
             </div>
         </div>
@@ -249,81 +250,69 @@
             String q2="SELECT*FROM news";
    ResultSet rs1=st1.executeQuery(q2);%>
         
-        <div class="content">
-            <h1><b>Uoj Events</b></h1>
-            <p>Forthcoming events at the university</p><br><br>
-        </div>
-        <div class="news">
-            <table>
+       <div class="content">
+    <h1><b>Uoj News</b></h1>
+    <p>Forthcoming news at the university</p><br><br>
+</div>
+<div class="news">
+    <table>
         <tr>
-            
             <% 
-                int a=0;
-                int b=0;
-                while(rs1.next() && b<=4)
-                {
-            if(b==4)
-            {%>
-        </tr><tr>
-           <% while(a<=3){
- %><td>
-                  <div class="card-container">
-        <div class="card">
-            <% 
-                byte[] imageData = rs1.getBytes("Image");
-                String base64Image = Base64.getEncoder().encodeToString(imageData);
-                
-                 %>
-                 <img src="data:image/png;base64,<%= base64Image %>"  width="255px" height="280px" />
-            <div class="card-body"><form action="landnew.jsp" method="post">
-                <h3><%=rs1.getString("nname") %></h3>
-                <p class="card-text"><%=rs1.getString("ndis")%></p>
-                <h4><%=rs1.getString("nid") %></h4>
-                 <br>
-                 <center><button style=" border-radius: 4px; width: 100px; background-color: #cccccc; font-weight: bold; border: 0; " type="submit" onmousemove="this.style.backgroundColor = '#2a38ec'; this.style.color='white';" onmouseout="this.style.backgroundColor = '#cccccc'; this.style.color='black';">view more</button></form></center></center> 
-                </form></div>
-            </div>
-        </div>
-    
-                  
-              </td> 
-            <%rs1.next();
-            a++;}
+            int a = 0;
+            int b = 0;
+            while(rs1.next() && b <= 4) {
+                if (b == 4) {
+                    %>
+                    </tr><tr>
+                    <% 
+                    while(a <= 3) { %>
+                        <td>
+                            <div class="card-container">
+                                <div class="card">
+                                    <% 
+                                        byte[] imageData = rs1.getBytes("Image");
+                                        String base64Image = Base64.getEncoder().encodeToString(imageData);
+                                    %>
+                                    <img src="data:image/png;base64,<%= base64Image %>"  width="255px" height="280px" />
+                                    <div class="card-body">
+                                        <h4><%= rs1.getString("nid") %></h4>
+                                        <h3><%= rs1.getString("nname") %></h3>
+                                        <p class="card-text"><%= rs1.getString("description") %></p>
 
-            break;
-            
-
-}
-            %><td>
-                  <div class="col-md-4">
-        <div class="card">
-            <% 
-                byte[] image = rs1.getBytes("photo");
-                String base64 = Base64.getEncoder().encodeToString(image);
-                
-                 %>
-                 <img src="data:image/png;base64,<%= base64 %>"  width="255" height="230" />
-            <div class="card-body"><form action="landnew.jsp" method="post">
-                <h3><%=rs1.getString("nname") %></h3><input type="hidden" name="name" value="<%=rs.getString("ename") %>">
-                <p class="card-text"><%=rs1.getString("description")%></p><input type="hidden" name="des" value="<%=rs.getString("description") %>">
-                <h4><%=rs1.getString("nid") %></h4><input type="hidden" name="price" value="<%=rs1.getString("nid") %>">
-                 <br>
-                 <center><button style=" border-radius: 4px; width: 100px; background-color: #cccccc; font-weight: bold; border: 0; " type="submit" onmousemove="this.style.backgroundColor = '#2a38ec'; this.style.color='white';" onmouseout="this.style.backgroundColor = '#cccccc'; this.style.color='black';">view more</button></form></center></center> 
-                </form>
-            </div>
-        </div>
-    </div>
-                  
-              </td>  <% b++;}
-            
-            %>
+                                    </div>
+                                </div>
+                            </div>
+                        </td> 
+                        <% 
+                        rs1.next();
+                        a++;
+                    }
+                    break;
+                } %>
+                <td>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <% 
+                                byte[] image = rs1.getBytes("photo");
+                                String base64 = Base64.getEncoder().encodeToString(image);
+                            %>
+                            <img src="data:image/png;base64,<%= base64 %>"  width="255" height="230" />
+                            <div class="card-body">
+                                <h4><%= rs1.getString("nid") %></h4>
+                                <h3><%= rs1.getString("nname") %></h3>
+                                <p class="card-text"><%= rs1.getString("description") %></p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </td> 
+                <% b++;
+            } %>
         </tr>
     </table>
-            
-        </div>
-        
-   
-      
+</div>
+
+  
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

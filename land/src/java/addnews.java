@@ -110,6 +110,7 @@ public class addnews extends HttpServlet {
             PreparedStatement ps = con.prepareStatement(q);
             ps.setBlob(1, input);
             ps.executeUpdate();
+            response.sendRedirect("landnew.jsp");
            
             
         } catch (SQLException ex) {
