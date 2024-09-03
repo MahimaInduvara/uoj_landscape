@@ -137,8 +137,8 @@
         <nav class="menu" style=" align-items: center; padding-left: 260px;">
             <ul>
                 <li><a href="landnew.jsp">Home</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aboutUs.jsp">About Us</a></li>
+                <li><a href="projects.jsp">Projects</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="gallery.jsp">Gallery</a></li>
                 <li><a href="contactUs.html">Contact Us</a></li>
