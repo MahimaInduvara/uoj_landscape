@@ -1,20 +1,3 @@
-<<<<<<< Updated upstream
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Dassa/land/land/src/java/updategallery.java</file>
-            <file>file:/C:/Dassa/land/land/src/java/addgallery.java</file>
-            <file>file:/C:/Dassa/land/land/web/landnew.jsp</file>
-            <file>file:/C:/Dassa/land/land/web/gallery.html</file>
-            <file>file:/C:/Dassa/land/land/web/event.html</file>
-            <file>file:/C:/Dassa/land/land/web/news.html</file>
-            <file>file:/C:/Dassa/land/land/web/gallery.jsp</file>
-        </group>
-    </open-files>
-</project-private>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
@@ -24,4 +7,3 @@
         </group>
     </open-files>
 </project-private>
->>>>>>> Stashed changes

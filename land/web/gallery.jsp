@@ -15,8 +15,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-<<<<<<< Updated upstream
-=======
         <style>
         body {
             font-family: Arial, sans-serif;
@@ -118,7 +116,6 @@
         }
         
     </style>
->>>>>>> Stashed changes
     </head>
     <body>
         <%
@@ -131,12 +128,6 @@
    
 
     %>
-<<<<<<< Updated upstream
-    <div class="content">
-        <center><h1><b>Gallery</b></h1></center>
-        
-    </div>
-=======
     <div class="flex-container" style=" padding-bottom: 700px;">
         <nav class="menu" style=" align-items: center; padding-left: 260px;">
             <ul>
@@ -153,7 +144,6 @@
             </nav>
     </div>
     
->>>>>>> Stashed changes
     <div class="news">
         <table>
             <tr>
